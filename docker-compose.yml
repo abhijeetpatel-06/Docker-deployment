@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  web:
+    build: ./app
+    container_name: docker-learning-app
+
+    ports:
+      - "8080:80"
+
+    env_file:
+      - .env
+
+    volumes:
+      - ./logs:/var/log/nginx
